@@ -8,7 +8,8 @@ while i < len(inputs) - 1:
   second = inputs[i + 1]
   if first.lower() == second.lower() and first.isupper() != second.isupper():
     inputs = inputs[:i] + inputs[i+2:]
-    i -= 1 # backtrack one to see if new adjacent pairs react
+    if i > 0:
+      i -= 1 # backtrack one to see if new adjacent pairs react
   else:
     i += 1
   

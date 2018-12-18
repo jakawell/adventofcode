@@ -28,9 +28,8 @@ while found_index is None:
   elf_1_index = (elf_1_index + int(recipes[elf_1_index]) + 1) % len(recipes)
   elf_2_index = (elf_2_index + int(recipes[elf_2_index]) + 1) % len(recipes)
   
-  recipe_index = recipes.find(recipe_to_find)
-  if recipe_index > 0:
-    found_index = recipe_index
+  if recipes.endswith(recipe_to_find):
+    found_index = len(recipes) - len(recipe_to_find)
     
   #print_recipes(recipes, elf_1_index, elf_2_index)
   
